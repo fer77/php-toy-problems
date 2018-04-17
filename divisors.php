@@ -3,9 +3,11 @@
 
 function divisors($integer) {
   $divsr = [];
+
   for($i = 2; $i < $integer; $i++)
     if($integer % $i == 0)
       $divsr[] = $i;
+      
   return $divsr != [] ? $divsr : $integer . ' is prime';
 }
  ?>
