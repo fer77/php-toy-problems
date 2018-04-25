@@ -10,10 +10,17 @@ Signature will always contain 3 numbers; n will always be a non-negative number;
 */
 
 function tribonacci($signature, $n) {
-  for ($i = 0; $i < $n - 3; $i++) {
-      array_push($signature, $signature[$i] + $signature[$i + 1] + $signature[$i + 2]);
+  $tribArr = [];
+  
+  for ($i = 0; $i < $n; $i++) {
+    if ($i < 3) {
+      $tribArr[$i] = $signature[$i];
+    } else {
+      $tribArr[$i] = $tribArr[$i - 1] + $tribArr[$i - 2] + $tribArr[$i - 3];
+    }
   }
-  return array_slice($signature, 0, $n);
-}
-
+  
+  return $tribArr;
+ }
+ 
  ?>
